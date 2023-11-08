@@ -1,0 +1,15 @@
+Jugador
+-Nombre
+-Idad
+-Golos
+
+Equipo
+-Nombre
+-Array <Jugador>
+-Array <Partido>
+
+Partido
+-Equipo equipoA
+-Equipo equipoB
+-Fecha
+-Resultado
