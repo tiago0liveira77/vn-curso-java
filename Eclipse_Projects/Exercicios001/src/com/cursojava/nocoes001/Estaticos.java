@@ -1,4 +1,4 @@
-package com.cursojava.nocoes;
+package com.cursojava.nocoes001;
 
 public class Estaticos {
 	private int ID;

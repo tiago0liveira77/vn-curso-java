@@ -1,4 +1,4 @@
-package com.cursojava.nocoes;
+package com.cursojava.nocoes001;
 
 public class varparametros {
 	public float media(int x1, int x2, int x3) {

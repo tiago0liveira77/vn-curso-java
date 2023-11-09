@@ -1,4 +1,4 @@
-package com.cursojava.nocoes;
+package com.cursojava.nocoes001;
 
 import java.text.DecimalFormat;
 
