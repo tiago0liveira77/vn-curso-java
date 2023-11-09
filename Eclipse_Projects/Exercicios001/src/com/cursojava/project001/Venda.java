@@ -1,6 +1,8 @@
 package com.cursojava.project001;
 
 public class Venda {
+	//MIN_PRECIO es el precio minimo para tener los cargos de envio gratuitos
+	static final double MIN_PRECIO = 5.00F;
 	private static int nextVendaID = 1;
 	private final int vendaID;
 	private Produto produto;

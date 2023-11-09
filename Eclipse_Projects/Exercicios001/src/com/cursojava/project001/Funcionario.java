@@ -1,5 +1,6 @@
 package com.cursojava.project001;
 
+
 public class Funcionario extends Persona implements FuncionarioActions{
 	private static int nextFuncID = 1;
 	private final int funcionarioID;
@@ -22,15 +23,29 @@ public class Funcionario extends Persona implements FuncionarioActions{
 	public int getFuncionarioID() {
 		return funcionarioID;
 	}
-
+	
+	/**
+	 * Realizar una venda
+	 * @param cliente
+	 * @param produto
+	 * @param cuantidad
+	 */
 	@Override
 	public void realizarVenda(Cliente cliente, Produto produto, int cuantidad) {
 		// TODO Auto-generated method stub
+		double precioTotal = produto.getPrecio()*cuantidad;
+			
 		Venda venda = new Venda(produto, cuantidad, cliente);
 		Loja.vendas.add(venda);
 		System.out.print("Funcionario: " + this.getNome());
 		System.out.print(" vendeu un/una : " + produto.getProductName());
-		System.out.println(" a el cliente: " + cliente.getNome());
+		System.out.print(" a el cliente: " + cliente.getNome());
+		if(precioTotal < Venda.MIN_PRECIO) {
+			System.out.println(" - Cargos de Envio + 5€ ");
+		} else {
+			System.out.println(" - Cargos de Envio GRATIS ");
+		}
+		
 		this.numVendas+=1;
 	}
 
