@@ -1,5 +1,8 @@
 package com.cursojava.project001;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
 
 public class Funcionario extends Persona implements FuncionarioActions{
 	private static int nextFuncID = 1;
@@ -29,12 +32,17 @@ public class Funcionario extends Persona implements FuncionarioActions{
 	 * @param cliente
 	 * @param produto
 	 * @param cuantidad
+	 * @throws CustomException 
 	 */
 	@Override
-	public void realizarVenda(Cliente cliente, Produto produto, int cuantidad) {
-		// TODO Auto-generated method stub
-		double precioTotal = produto.getPrecio()*cuantidad;
+	public void realizarVenda(Cliente cliente, Produto produto, int cuantidad) throws CustomException {
+		if (produto.getStock() < cuantidad) {
+			throw new CustomException(2);
+		} else if (cuantidad <= 0) {
+			throw new CustomException(1);
+		}
 			
+		double precioTotal = produto.getPrecio()*cuantidad;
 		Venda venda = new Venda(produto, cuantidad, cliente);
 		Loja.vendas.add(venda);
 		System.out.print("Funcionario: " + this.getNome());
@@ -47,18 +55,42 @@ public class Funcionario extends Persona implements FuncionarioActions{
 		}
 		
 		this.numVendas+=1;
+		produto.setStock(produto.getStock()-cuantidad);
 	}
 
+	/**
+	 * Abrir la loja
+	 */
 	@Override
 	public void abrirLoja() {
 		// TODO Auto-generated method stub
 		System.out.println("Funcionario: " + this.getNome() + " abrio la loja");
 	}
 
+	/**
+	 * Cerrar la loja
+	 * Las vendas del dia son guardadas nun fichero
+	 */
 	@Override
 	public void cerrarLoja() {
-		// TODO Auto-generated method stub
-		System.out.println("Funcionario: " + this.getNome() + " cerro la loja");
+		try {
+			//Crear una stream para escribit en un fichero
+			FileWriter writer = new FileWriter(LocalDate.now() + "_sells.txt");
+			//depues de crear el fichero -> escrebe todas las vendas registadas
+			for(Venda venda: Loja.vendas) {
+				writer.write(venda.toString());
+				writer.write("\n");
+			}
+			//cerrar la stream y guardar el fichero
+			writer.close();
+			System.out.println("Registo de vendas del dia guardado.");
+			System.out.println("Funcionario: " + this.getNome() + " cerro la loja");
+		} catch (IOException e) {
+			//errores abrindo la stream o fichero ...
+			e.printStackTrace();
+		} finally {
+			System.out.println("Hasta manana");
+		}
 	}
 
 	@Override

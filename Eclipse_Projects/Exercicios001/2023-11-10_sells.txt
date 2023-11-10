@@ -1,0 +1,2 @@
+Venda [vendaID=1, produto=Ordenador [brand=HP, cpu=Intel i5, ProductName=Ordenador1, Precio=44.0, Stock=3, ProductID=1, Feedback=null], cuantidad=1, cliente=Cliente [clientID=1, numCompras=0, Nome=Cliente1, Edad=21, PersonaID=1111]]
+Venda [vendaID=2, produto=Ordenador [brand=HP, cpu=Intel i7, ProductName=Ordenador2, Precio=66.0, Stock=4, ProductID=2, Feedback=null], cuantidad=1, cliente=Cliente [clientID=2, numCompras=0, Nome=Cliente2, Edad=23, PersonaID=1112]]

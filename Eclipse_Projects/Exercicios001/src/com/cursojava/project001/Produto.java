@@ -6,12 +6,14 @@ public abstract class Produto implements Feedback{
 	private String productName;
 	private double precio;
 	private String feedback;
+	private int stock;
 	
-	public Produto(String productName, double precio) {
+	public Produto(String productName, double precio, int stock) {
 		super();
 		this.productID = nextProductID++;
 		this.productName = productName;
 		this.precio = precio;
+		this.stock = stock;
 	}
 
 	public String getProductName() {
@@ -41,6 +43,16 @@ public abstract class Produto implements Feedback{
 	public void setFeedback(String feedback) {
 		this.feedback = feedback;
 	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+	
+	
 	
 	
 }

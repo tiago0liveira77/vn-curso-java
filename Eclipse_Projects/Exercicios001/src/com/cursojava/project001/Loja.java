@@ -11,7 +11,7 @@ public class Loja {
 		}
 	}
 		
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CustomException {
 		Persona cliente1 = new Cliente(1111, "Cliente1", 21);
 		Persona cliente2 = new Cliente(1112, "Cliente2", 23);
 		System.out.println(cliente1.toString());
@@ -22,8 +22,8 @@ public class Loja {
 		System.out.println(funcionario1.toString());
 		System.out.println(funcionario2.toString());
 		
-		Produto produto1 = new Ordenador("Ordenador1", 44, 1234567, "HP", "Intel i5" );
-		Produto produto2 = new Ordenador("Ordenador2", 66, 6634567, "HP", "Intel i7" );
+		Produto produto1 = new Ordenador("Ordenador1", 44, 4, "HP", "Intel i5" );
+		Produto produto2 = new Ordenador("Ordenador2", 66, 5, "HP", "Intel i7" );
 		System.out.println(produto1.toString());
 		System.out.println(produto2.toString());
 		

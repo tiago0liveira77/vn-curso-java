@@ -1,13 +1,11 @@
 package com.cursojava.project001;
 
 public class Ordenador extends Produto{
-	private final int serialNumber;
 	private String brand;
 	private String cpu;
 	
-	public Ordenador(String productName, double precio, int serialNumber, String brand, String cpu) {
-		super(productName, precio);
-		this.serialNumber = serialNumber;
+	public Ordenador(String productName, double precio, int stock, String brand, String cpu) {
+		super(productName, precio, stock);
 		this.brand = brand;
 		this.cpu = cpu;
 	}
@@ -19,8 +17,8 @@ public class Ordenador extends Produto{
 
 	@Override
 	public String toString() {
-		return "Ordenador [serialNumber=" + serialNumber + ", brand=" + brand + ", cpu=" + cpu + ", ProductName="
-				+ getProductName() + ", Precio=" + getPrecio() + ", ProductID=" + getProductID()
+		return "Ordenador [brand=" + brand + ", cpu=" + cpu + ", ProductName="
+				+ getProductName() + ", Precio=" + getPrecio() + ", Stock=" + getStock() + ", ProductID=" + getProductID()
 				+ ", Feedback=" + getFeedback() + "]";
 	}
 	
