@@ -16,4 +16,11 @@ public class Rectangulo extends Figura{
 		return this.comp*this.larg;
 	}
 
+	@Override
+	public String toString() {
+		return "Rectangulo [x=" + this.getX() +", y=" + this.getY() + ", comp=" + comp + ", larg=" + larg + "]";
+	}
+
+	
+	
 }

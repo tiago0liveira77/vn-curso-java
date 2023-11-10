@@ -14,5 +14,20 @@ public class Circulo extends Figura{
 		// TODO Auto-generated method stub
 		return Math.PI * this.radio * this.radio;
 	}
+	
+	
+	
+	public double getRadio() {
+		return radio;
+	}
+
+	public void setRadio(double radio) {
+		this.radio = radio;
+	}
+
+	@Override
+	public String toString() {
+		return "Circulo [x=" + this.getX() +", y=" + this.getY() + ", comp=" + this.getRadio()+ "]";
+	}
 
 }

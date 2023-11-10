@@ -11,6 +11,22 @@ public abstract class Figura {
 		this.y = y;
 	}
 	
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
 	public static Figura figuraMaior(Figura[] arr) {
 		double aux = -1;
 		Figura maior = null;
@@ -22,4 +38,6 @@ public abstract class Figura {
 		}
 		return maior;
 	}
+	
+	
 }

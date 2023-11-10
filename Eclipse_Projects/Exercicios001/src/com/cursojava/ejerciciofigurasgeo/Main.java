@@ -9,6 +9,6 @@ public class Main {
 		
 		Figura maior = Figura.figuraMaior(arr);
 		
-		System.out.println("La figura maior es: " + maior.getClass().getSimpleName());
+		System.out.println("La figura maior es el -> " +maior.toString());
 	}
 }
