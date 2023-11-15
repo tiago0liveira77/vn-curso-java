@@ -39,4 +39,14 @@
     <servlet-name>TabuadaDinamica</servlet-name>
     <url-pattern>/TabuadaDinamica</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ParametrosURL</display-name>
+    <servlet-name>ParametrosURL</servlet-name>
+    <servlet-class>com.curso.ParametrosURL</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParametrosURL</servlet-name>
+    <url-pattern>/ParametrosURL</url-pattern>
+  </servlet-mapping>
 </web-app>

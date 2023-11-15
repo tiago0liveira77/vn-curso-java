@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="top" class="anchor"></div>
+    <div id="navBar" class="navBar">
+        <a href="./index.html">HOME</a>
+        <a href="./examples.html">Examples</a>
+        
+        <div class="rightContent">
+            <!-- Conteúdo que vai à direita -->
+            <a href="./login.html">Login</a>
+            <a href="./regist.html">Registro</a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="registerForm" class="anchor"></div>
+        <div class="registerForm"> 
+            <h2> Ejemplo de Form Registro</h2>
+            <form method="post" action="GuardarRegisto">
+                <p>
+                    <label for="nombreField">Nombre</label>
+                    <br>
+                    <input type="text" name="nombreField" id="nombreField" value="tiago">
+                </p>
+                <p>
+                    <label for="emailField">Email</label>
+                    <br>
+                    <input type="email" name="emailField" id="emailField" value="tiago@email.com">
+
+                </p>
+                <p>
+                    <label for="passwordField">Password</label>
+                    <br>
+                    <input type="password" name="passwordField" id="passwordField">
+                </p>
+                <p>
+                    <label for="radioField">RadioField Example</label>
+                    <input type="radio" name="radioField" value="radio1">Radio1
+                    <input type="radio" name="radioField" value="radio2">Radio2
+                </p>
+                <p>
+                    <label for="selectField">Select Example</label>
+                    <select name="selectField">
+                        <option value="val1">Val 1</option>
+                        <option value="val2">Val 2</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="checkboxtField">CheckBox Example</label>
+                    <input type="checkbox" name="checkboxField1" value="check1">Check1
+                    <input type="checkbox" name="checkboxField2" value="check2">Check2
+                </p>
+                <p>
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Regist">
+                </p>
+
+            </form>
+            <p><a href="#top">Top</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
