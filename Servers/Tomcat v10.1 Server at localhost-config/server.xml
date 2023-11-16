@@ -140,7 +140,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Semana02_03_Cookies" path="/Semana02_03_Cookies" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_03_Cookies"/><Context docBase="Semana02_04_Buscador" path="/Semana02_04_Buscador" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_04_Buscador"/><Context docBase="Semana02_05_FormToGoogle" path="/Semana02_05_FormToGoogle" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_05_FormToGoogle"/><Context docBase="Semana02_06_Login" path="/Semana02_06_Login" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_06_Login"/><Context docBase="Semana02_04_BuscadorService" path="/Semana02_04_BuscadorService" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_04_BuscadorService"/><Context docBase="Semana02_07_EscrebirEnCurso" path="/Semana02_07_EscrebirEnCurso" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_07_EscrebirEnCurso"/></Host>
+      <Context docBase="Semana02_10_Projeto" path="/Semana02_10_Projeto" reloadable="false" source="org.eclipse.jst.jee.server:Semana02_10_Projeto"/></Host>
     </Engine>
   </Service>
 </Server>
