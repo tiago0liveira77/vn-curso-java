@@ -29,4 +29,34 @@
     <servlet-name>LerCookie</servlet-name>
     <url-pattern>/LerCookie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CriarCookie2</display-name>
+    <servlet-name>CriarCookie2</servlet-name>
+    <servlet-class>com.curso.CriarCookie2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CriarCookie2</servlet-name>
+    <url-pattern>/CriarCookie2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CriarSessao</display-name>
+    <servlet-name>CriarSessao</servlet-name>
+    <servlet-class>com.curso.sessiones.CriarSessao</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CriarSessao</servlet-name>
+    <url-pattern>/CriarSessao</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LerSessao</display-name>
+    <servlet-name>LerSessao</servlet-name>
+    <servlet-class>com.curso.sessiones.LerSessao</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LerSessao</servlet-name>
+    <url-pattern>/LerSessao</url-pattern>
+  </servlet-mapping>
 </web-app>
