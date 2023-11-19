@@ -17,6 +17,7 @@ public class ModifyProduto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * GET es usado para redireccionar para el form de edit
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,6 +29,7 @@ public class ModifyProduto extends HttpServlet {
 	}
 
 	/**
+	 * POST es usado para guardar los cambios
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

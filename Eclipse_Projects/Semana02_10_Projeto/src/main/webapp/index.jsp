@@ -9,7 +9,10 @@
 </head>
 <body>
 	<jsp:include page="navbar.jsp"/>
-	<% 
+	<%
+	/*
+	* Cuando la pagina vuelva a el index, la session es cerrada
+	*/
 	HttpSession mHttpSession = request.getSession();
 	mHttpSession.setAttribute("userLogged", null);
 	mHttpSession.invalidate();

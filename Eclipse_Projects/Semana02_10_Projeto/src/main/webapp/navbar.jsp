@@ -4,7 +4,10 @@
 	<div id="navBar" class="navBar">     
 		
 		<%
-		//String user =  (String)request.getAttribute("userLogged");
+		/**
+		 * Verifica si hay session activa y saca el username
+		 * Si no hay session solo mostra el button e login
+		 */
 		HttpSession mHttpSession = request.getSession();
 		String user = (String) mHttpSession.getAttribute("userLogged");
 		//user = "admin";

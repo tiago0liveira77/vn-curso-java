@@ -30,7 +30,9 @@ public class ProdutosService {
 	}
 
 
-
+	/**
+	 * Inicia el array con 4 produtos de ejemplo
+	 */
 	public void iniciarProdutos(){
 		produtos.add(new Produto("Produto 1", 50, 230));
 		produtos.add(new Produto("Produto 2", 30, 550));
