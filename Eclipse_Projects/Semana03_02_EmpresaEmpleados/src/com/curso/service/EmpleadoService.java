@@ -88,4 +88,42 @@ public class EmpleadoService {
 		}
 	}
 	
+	public List<String> selectNombres() {
+		List<String> empleadosNombre = new ArrayList<>();
+		String query = "select * from empleados";
+		try {
+			Connection conexion = DriverManager.getConnection(url, user, pdw);
+			PreparedStatement preSentencia = conexion.prepareStatement(query);
+			ResultSet rs = preSentencia.executeQuery();
+			while (rs.next()) {
+				empleadosNombre.add(rs.getString("nombre"));
+			}
+			return empleadosNombre;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return empleadosNombre;
+	}
+	
+	public List<Double> selectSalario() {
+		List<Double> empleadosSalario = new ArrayList<>();
+		String query = "select * from empleados";
+		try {
+			Connection conexion = DriverManager.getConnection(url, user, pdw);
+			PreparedStatement preSentencia = conexion.prepareStatement(query);
+			ResultSet rs = preSentencia.executeQuery();
+			while (rs.next()) {
+				empleadosSalario.add(rs.getDouble("salario"));
+			}
+			return empleadosSalario;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return empleadosSalario;
+	}
+	
 }
