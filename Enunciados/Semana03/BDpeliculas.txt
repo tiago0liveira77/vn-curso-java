@@ -1,0 +1,12 @@
+Crear una BD de las películas de un videoclub.
+Se dispone de las siguiente información de las películas:
+Código, titulo, nombre del director y precio de alquiler.
+
+Insertar algunos registros y realizar las siguientes consultas.
+
+Mostrar todos las películas
+Mostrar las películas cuyo director es Cosme
+Mostrar las películas en las que el nombre del director empieza por M
+Mostrar las películas cuyo directora es Ana o Eva
+Mostrar sólo los directores de las películas
+Mostrar las películas cuyo precio es mayor que 20 y menor que 55

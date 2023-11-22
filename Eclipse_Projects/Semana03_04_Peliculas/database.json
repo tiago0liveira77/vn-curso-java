@@ -1,0 +1,10 @@
+[{"codigo":"MOV001", "titulo":"Movie 1", "diretor":"Director 1", "precio":500},
+ {"codigo":"MOV002", "titulo":"Movie 2", "diretor":"Director 2", "precio":30},
+ {"codigo":"MOV003", "titulo":"Movie 3", "diretor":"Director 1", "precio":15},
+ {"codigo":"MOV004", "titulo":"Movie 4", "diretor":"Director 3", "precio":66},
+ {"codigo":"MOV005", "titulo":"Movie 5", "diretor":"Cosme", "precio":54},
+ {"codigo":"MOV006", "titulo":"Movie 6", "diretor":"Cosme", "precio":52},
+ {"codigo":"MOV007", "titulo":"Movie 7", "diretor":"MovieMaker", "precio":20},
+ {"codigo":"MOV008", "titulo":"Movie 8", "diretor":"Ana", "precio":100},
+ {"codigo":"MOV009", "titulo":"Movie 9", "diretor":"Eva", "precio":123},
+ {"codigo":"MOV010", "titulo":"Movie 1 Edited", "diretor":"Director 1 Edited", "precio":400}]

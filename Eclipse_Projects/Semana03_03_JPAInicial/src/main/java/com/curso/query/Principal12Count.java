@@ -9,20 +9,22 @@ import javax.persistence.TypedQuery;
 
 import com.curso.model.Libro;
 
-public class Principal05Query {
+public class Principal12Count {
 
 	public static void main(String[] args) {
 		EntityManagerFactory emt = Persistence.createEntityManagerFactory("biblio"); //nombre de persistence-unit del META-INF/persistence.xml
 		EntityManager em = emt.createEntityManager();
 		
 		//
-		TypedQuery<Libro> consulta = em.createQuery("SELECT l FROM Libro l", Libro.class);
+		TypedQuery<Object[]> consulta = em.createQuery("select count(l.precio), l.precio from Libro l group by l.precio", Object[].class);
+	
+		List<Object[]> lista = consulta.getResultList();
 		
-		List<Libro> lista = consulta.getResultList();
-		
-		for(Libro l:lista) {
-			System.out.println(l.toString());
+		for(Object[] sublista:lista) {
+			System.out.println(sublista[0] + "---" + sublista[1]);
 		}
+		
+		
 	}
 
 }

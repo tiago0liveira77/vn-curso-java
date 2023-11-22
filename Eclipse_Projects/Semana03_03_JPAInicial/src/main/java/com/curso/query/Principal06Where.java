@@ -16,7 +16,8 @@ public class Principal06Where {
 		EntityManager em = emt.createEntityManager();
 		
 		//
-		TypedQuery<Libro> consulta = em.createQuery("SELECT l FROM Libro l", Libro.class);
+		TypedQuery<Libro> consulta = em.createQuery("SELECT l FROM Libro l WHERE l.autor = :autor", Libro.class);
+		consulta.setParameter("autor", "sata");
 	
 		List<Libro> lista = consulta.getResultList();
 		
