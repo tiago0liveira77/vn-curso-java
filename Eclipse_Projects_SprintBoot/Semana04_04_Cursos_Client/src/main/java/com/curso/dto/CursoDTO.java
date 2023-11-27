@@ -1,26 +1,16 @@
-package com.curso.model;
+package com.curso.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name="cursos")
-public class Curso {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CursoDTO {
 	private int codCurso;
 	private String nombre;
 	private int duracion;
 	private double precio;
-	
-	public Curso() {
+
+	public CursoDTO() {
 		super();
 	}
 
-	public Curso(int codCurso, String nombre, int duracion, double precio) {
+	public CursoDTO(int codCurso, String nombre, int duracion, double precio) {
 		super();
 		this.codCurso = codCurso;
 		this.nombre = nombre;
@@ -60,13 +50,4 @@ public class Curso {
 		this.precio = precio;
 	}
 
-	@Override
-	public String toString() {
-		return "Curso [codCurso=" + codCurso + ", nombre=" + nombre + ", duracion=" + duracion + ", precio=" + precio
-				+ "]";
-	}
-	
-	
-	
-	
 }
