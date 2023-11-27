@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.model.Curso;
@@ -23,6 +24,11 @@ public class CursoController {
 	@GetMapping(value = "cursos", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Curso> getCurso() {
 		return service.getCursos();
+	}
+	
+	@GetMapping(value = "cursos/price", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Curso> getCursoPrice(@RequestParam("min") int min, @RequestParam("max") int max) {
+		return service.getCursoPrice(min, max);
 	}
 
 	@GetMapping(value = "cursos/{curso}", produces = MediaType.APPLICATION_JSON_VALUE)

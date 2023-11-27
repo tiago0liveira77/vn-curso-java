@@ -39,5 +39,10 @@ public class CursoServiceImpl implements CursoService{
 		dao.deleteById(codCurso);
 		return getCursos();
 	}
+	
+	@Override
+	public List<Curso> getCursoPrice(int min, int max) {
+		return dao.getCursoPrice(min, max);
+	}
 
 }

@@ -10,4 +10,5 @@ public interface CursoService {
     void addCurso(Curso curso);
     void updateCurso(Curso curso);
     List<Curso> deleteCurso(int codCurso);
+    List<Curso> getCursoPrice(int min, int max);
 }
