@@ -40,4 +40,10 @@ public class LibrosServiceImpl implements LibrosService{
 		return libros();
 	}
 
+	@Override
+	public List<Libro> findByTematica(String tematica) {
+		// TODO Auto-generated method stub
+		return dao.findByTematica(tematica);
+	}
+
 }

@@ -45,4 +45,9 @@ public class LibrosController {
 		return service.deleteLibro(isbn);
 	}
 	
+	@GetMapping(value="libro/{tematica}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> findByTematica(@PathVariable("tematica") String tematica) {
+		return service.findByTematica(tematica);
+	}
+	
 }

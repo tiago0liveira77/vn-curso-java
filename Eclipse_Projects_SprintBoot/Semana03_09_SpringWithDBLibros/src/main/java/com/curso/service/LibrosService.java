@@ -10,4 +10,5 @@ public interface LibrosService {
 	void addLibro(Libro libro);
 	void updateLibro(Libro libro);
 	List<Libro> deleteLibro(int isbn);
+	List<Libro> findByTematica(String tematica);
 }

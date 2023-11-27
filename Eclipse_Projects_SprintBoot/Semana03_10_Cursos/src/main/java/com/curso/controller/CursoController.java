@@ -26,8 +26,8 @@ public class CursoController {
 		return service.getCursos();
 	}
 	
-	@GetMapping(value = "cursos/price", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Curso> getCursoPrice(@RequestParam("min") int min, @RequestParam("max") int max) {
+	@GetMapping(value = "cursos/{min}/{max}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Curso> getCursoPrice(@PathVariable("min") int min, @PathVariable("max") int max) {
 		return service.getCursoPrice(min, max);
 	}
 
