@@ -8,26 +8,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.curso.model.Ejemplar;
-import com.curso.service.EjemplarService;
+import com.curso.model.Formacion;
+import com.curso.service.FormacionesService;
 
 @RestController
-public class EjemplarController {
+public class FormacionesController {
 	@Autowired
-	EjemplarService service;
+	FormacionesService service;
 	
-	@PostMapping(value="ejemplar/{curso}/{asignaturas}/{precio}")
-	public List<Ejemplar> addEjemplar(
+	@PostMapping(value="formaciones/{curso}/{asignaturas}/{precio}")
+	public List<Formacion> addEjemplar(
 			@PathVariable("curso") String curso, 
 			@PathVariable("asignaturas")int asignaturas, 
 			@PathVariable("precio")double precio){
-		Ejemplar ejemplar = new Ejemplar(curso, asignaturas, precio);
-		service.addEjemplar(ejemplar);
+		Formacion ejemplar = new Formacion(curso, asignaturas, precio);
+		service.addFormacion(ejemplar);
 		return getEjemplares();
 	}
 	
-	@GetMapping(value="ejemplar")
-	public List<Ejemplar> getEjemplares(){
-		return service.getEjemplares();
+	@GetMapping(value="formaciones")
+	public List<Formacion> getEjemplares(){
+		return service.getFormaciones();
 	}
 }

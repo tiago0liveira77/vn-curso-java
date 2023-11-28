@@ -1,14 +1,14 @@
 package com.curso.model;
 
-public class Ejemplar {
+public class Formacion {
 	private String curso;
 	private int asignaturas;
 	private double precio;
 	
-	public Ejemplar() {
+	public Formacion() {
 		super();
 	}
-	public Ejemplar(String curso, int asignaturas, double precio) {
+	public Formacion(String curso, int asignaturas, double precio) {
 		super();
 		this.curso = curso;
 		this.asignaturas = asignaturas;
