@@ -17,17 +17,17 @@ public class FormacionesController {
 	FormacionesService service;
 	
 	@PostMapping(value="formaciones/{curso}/{asignaturas}/{precio}")
-	public List<Formacion> addEjemplar(
+	public List<Formacion> addFormacion(
 			@PathVariable("curso") String curso, 
 			@PathVariable("asignaturas")int asignaturas, 
 			@PathVariable("precio")double precio){
-		Formacion ejemplar = new Formacion(curso, asignaturas, precio);
-		service.addFormacion(ejemplar);
-		return getEjemplares();
+		Formacion formacion = new Formacion(curso, asignaturas, precio);
+		service.addFormacion(formacion);
+		return getFormaciones();
 	}
 	
 	@GetMapping(value="formaciones")
-	public List<Formacion> getEjemplares(){
+	public List<Formacion> getFormaciones(){
 		return service.getFormaciones();
 	}
 }

@@ -6,6 +6,6 @@ import com.curso.dto.CursoDTO;
 import com.curso.model.Formacion;
 
 public interface FormacionesService {
-	List<Formacion> addFormacion(Formacion ejemplar);
+	List<Formacion> addFormacion(Formacion formacion);
 	List<Formacion> getFormaciones();
 }
