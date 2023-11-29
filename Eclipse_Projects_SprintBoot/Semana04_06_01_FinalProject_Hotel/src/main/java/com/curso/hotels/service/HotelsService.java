@@ -1,12 +1,16 @@
 package com.curso.hotels.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.curso.hotels.model.Hotel;
 
 public interface HotelsService {
 	List<Hotel> getHotels();
 	List<Hotel> getHotelsAvailable(boolean disponible);
-	List<Hotel> getHotelsByName(String nombre);
+	Optional<Hotel> getHotelsByName(String nombre);
+	int getHotelsIDByName(String nombre);
+	List<Hotel> addHotel(Hotel hotel);
+	Boolean isHotelAvailable(int idHotel);
 	
 }

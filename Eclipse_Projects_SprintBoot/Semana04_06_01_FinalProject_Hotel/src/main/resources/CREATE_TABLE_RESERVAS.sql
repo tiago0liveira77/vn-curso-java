@@ -1,10 +1,10 @@
 CREATE TABLE `final_project_hotels_vuelos_reservas`.`reservas` (
-  `id_reservas` INT NOT NULL AUTO_INCREMENT,
+  `id_reserva` INT NOT NULL AUTO_INCREMENT,
   `cliente` VARCHAR(255) NULL,
-  `dni` VARCHAR(40) NULL,
+  `dni` VARCHAR(45) NULL,
   `id_hotel` INT NULL,
   `id_vuelo` INT NULL,
-  PRIMARY KEY (`id_reservas`),
+  PRIMARY KEY (`id_reserva`),
   INDEX `id_hotel_idx` (`id_hotel` ASC) VISIBLE,
   INDEX `id_vuelo_idx` (`id_vuelo` ASC) VISIBLE,
   CONSTRAINT `id_hotel`
