@@ -9,10 +9,18 @@ Las reservas tiene informacion como id, idHotel, idVuelo y personas.
 
 La API permtie realizar operaciones CRUD a todos los modelos. A crear una reserva es verificado si hay plazas suficientes en el vuelo y si el hotel esta disponible.
 
+Todos los microservicios tiene la dependencia OPENAPI Swagger que permiti visualisar en el browser toda la API e sus endpoints.
+
 ## Tecnologias Utilizadas
 - Spring Boot
 - Java
 - RESTful API
 - Maven
+- Swagger
 
 ## Configuración del Proyecto
+Documentacion de API (usando las mismas ports):
+- Hotels: http://localhost:8080/swagger-ui/index.html
+- Vuelos: http://localhost:9000/swagger-ui/index.html
+- Reservas http://localhost:9001/swagger-ui/index.html
+
