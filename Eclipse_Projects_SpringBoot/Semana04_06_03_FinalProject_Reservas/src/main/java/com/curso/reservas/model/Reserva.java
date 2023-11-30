@@ -21,6 +21,14 @@ public class Reserva {
 		super();
 	}
 
+	/**
+	 * 
+	 * @param idReserva
+	 * @param cliente
+	 * @param dni
+	 * @param idHotel
+	 * @param idVuelo
+	 */
 	public Reserva(int idReserva, String cliente, String dni, int idHotel, int idVuelo) {
 		super();
 		this.idReserva = idReserva;

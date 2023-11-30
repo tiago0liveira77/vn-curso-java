@@ -13,6 +13,8 @@ import com.curso.reservas.exceptions.VueloNoDisponibleException;
  * GlobalExceptionHandler es un @ControllerAdvice
  * que permite personalizar los "traces" 
  * de las excepciones
+ * 
+ * @see com.curso.reservas.exceptions
  */
 @ControllerAdvice
 public class GlobalExceptionHandler {
