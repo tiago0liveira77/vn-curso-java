@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+</head>
+<table border="1">
+<!-- Usamos una iteración  para recorrer los elementos de la lista-->
+	<tr th:each="persona:${lista}">
+		<td th:text="${persona.nombre}"></td>
+		<td th:text="${persona.apellidos}"></td>
+		<td th:text="${persona.edad}"></td>
+
+	</tr>
+</table>
+
+
+</html>
