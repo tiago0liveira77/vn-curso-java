@@ -6,7 +6,7 @@ import com.curso.reservas.dto.NuevaReservaDTO;
 import com.curso.reservas.model.Reserva;
 
 public interface ReservasService {
-	Reserva addReserva(NuevaReservaDTO nuevaReserva);
+	Boolean addReserva(NuevaReservaDTO nuevaReserva);
 	List<Reserva> getReservas();
 	List<Reserva> getReservasByHotelName(String nombreHotel);
 }

@@ -56,18 +56,18 @@ public class HotelServiceImpl implements HotelsService {
 	}
 	
 	@Override
-	public List<Hotel> addHotel(Hotel hotel){
+	public Boolean addHotel(Hotel hotel){
 		try {
             dao.save(hotel);
-            return getHotels();
+            return true;
         } catch (DataIntegrityViolationException e) {
         	//Si hay Duplicated Primary Key
             e.printStackTrace();
-            return getHotels(); 
+            return false; 
         }
         catch (Exception e) {
             e.printStackTrace();
-            return getHotels(); 
+            return false; 
         }
 	}
 

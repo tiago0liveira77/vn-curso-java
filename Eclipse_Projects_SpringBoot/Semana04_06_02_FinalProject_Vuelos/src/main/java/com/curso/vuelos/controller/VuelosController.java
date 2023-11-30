@@ -44,24 +44,29 @@ public class VuelosController {
 		return ResponseEntity.ok(vuelos);
 	}
 	
+	
 	@GetMapping(value="hasplazas/{idvuelo}/{plaza}")
-	public Boolean hasPlazas(@PathVariable("idvuelo")int idVuelo, @PathVariable("plaza") int plaza){
-		return service.hasPlazas(idVuelo, plaza);
+	public ResponseEntity<Boolean> hasPlazas(@PathVariable("idvuelo")int idVuelo, @PathVariable("plaza") int plaza){
+		return ResponseEntity.ok(service.hasPlazas(idVuelo, plaza));		
 	}
 	
 	@PostMapping
-	public List<Vuelo> addVuelo(@RequestBody Vuelo vuelo){
-		return service.addVuelo(vuelo);
+	public ResponseEntity<Boolean> addVuelo(@RequestBody Vuelo vuelo){
+		return ResponseEntity.ok(service.addVuelo(vuelo));
 	}
 	
 	@GetMapping(value="/disponibles/{plaza}")
-	public List<Vuelo> getVuelosDisponibles(@PathVariable("plaza") int plaza){
-		return service.getVuelosDisponibles(plaza);
+	public ResponseEntity<List<Vuelo>> getVuelosDisponibles(@PathVariable("plaza") int plaza){
+		List<Vuelo> vuelos = service.getVuelosDisponibles(plaza);
+		if(vuelos.isEmpty()) {
+			 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+		}
+		return ResponseEntity.ok(vuelos);
 	}
 	
 	@PutMapping(value="/reserve/{idvuelo}/{plazas}")
-	public void udpVuelo(@PathVariable("idvuelo")int idVuelo, @PathVariable("plazas")int plazasReservadas){
-		service.updVuelo(idVuelo, plazasReservadas);
+	public ResponseEntity<Boolean> udpVuelo(@PathVariable("idvuelo")int idVuelo, @PathVariable("plazas")int plazasReservadas){		
+		return ResponseEntity.ok(service.updVuelo(idVuelo, plazasReservadas));
 	}
 	
 	

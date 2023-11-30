@@ -25,17 +25,17 @@ public class VuelosServiceImpl implements VuelosService {
 	VuelosDAO dao;
 
 	@Override
-	public List<Vuelo> addVuelo(Vuelo vuelo) {
+	public Boolean addVuelo(Vuelo vuelo) {
 		try {
 			dao.save(vuelo);
-			return getVuelos();
+			return true;
 		} catch (DataIntegrityViolationException e) {
 			// Si hay Duplicated Primary Key
 			e.printStackTrace();
-			return getVuelos();
+			return false;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return getVuelos();
+			return false;
 		}
 	}
 
@@ -60,7 +60,7 @@ public class VuelosServiceImpl implements VuelosService {
 	}
 
 	@Override
-	public void updVuelo(int idVuelo, int plazasReservadas) {
+	public Boolean updVuelo(int idVuelo, int plazasReservadas) {
 		try {
 			// Verifica si el vuelo existe
 			Vuelo vuelo = dao.findById(idVuelo).orElse(null);
@@ -68,13 +68,13 @@ public class VuelosServiceImpl implements VuelosService {
 				if (hasPlazas(vuelo.getIdVuelo(), plazasReservadas)) {
 					vuelo.setPlaza(vuelo.getPlaza() - plazasReservadas);
 					dao.save(vuelo);
-					return;
+					return true;
 				}
 			} 
-			return;
+			return false;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return;
+			return false;
 		}
 
 	}

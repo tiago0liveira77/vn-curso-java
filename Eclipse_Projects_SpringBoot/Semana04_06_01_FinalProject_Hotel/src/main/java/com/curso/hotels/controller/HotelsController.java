@@ -45,13 +45,17 @@ public class HotelsController {
 	}
 	
 	@PostMapping
-	public List<Hotel> addHotel(@RequestBody Hotel hotel){
-		return service.addHotel(hotel);
+	public ResponseEntity<Boolean> addHotel(@RequestBody Hotel hotel){
+		return ResponseEntity.ok(service.addHotel(hotel));	
 	}
 	
 	@GetMapping("/disponibles")
-	public List<Hotel> getHotelsAvailable(){
-		return service.getHotelsAvailable(true);
+	public ResponseEntity<List<Hotel>> getHotelsAvailable(){
+		List<Hotel> hotels = service.getHotelsAvailable(true);
+		if(hotels.isEmpty()) {
+			 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+		}
+		return ResponseEntity.ok(hotels);
 	}
 	
 	@GetMapping("/{hotel}")
@@ -60,13 +64,13 @@ public class HotelsController {
 	}
 	
 	@GetMapping("/id/{hotel}")
-	public int getHotelsIDByName(@PathVariable("hotel") String hotel){
-		return service.getHotelsIDByName(hotel);
+	public ResponseEntity<Integer> getHotelsIDByName(@PathVariable("hotel") String hotel){
+		return ResponseEntity.ok(service.getHotelsIDByName(hotel));
 	}
 	
 	@GetMapping("/disponibles/{idhotel}")
-	public Boolean isHotelAvailable(@PathVariable("idhotel") int idHotel){
-		return service.isHotelAvailable(idHotel);
+	public ResponseEntity<Boolean> isHotelAvailable(@PathVariable("idhotel") int idHotel){
+		return ResponseEntity.ok(service.isHotelAvailable(idHotel));
 	}
 	
 }

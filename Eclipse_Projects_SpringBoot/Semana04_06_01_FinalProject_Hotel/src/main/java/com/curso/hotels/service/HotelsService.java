@@ -10,7 +10,7 @@ public interface HotelsService {
 	List<Hotel> getHotelsAvailable(boolean disponible);
 	Optional<Hotel> getHotelsByName(String nombre);
 	int getHotelsIDByName(String nombre);
-	List<Hotel> addHotel(Hotel hotel);
+	Boolean addHotel(Hotel hotel);
 	Boolean isHotelAvailable(int idHotel);
 	
 }

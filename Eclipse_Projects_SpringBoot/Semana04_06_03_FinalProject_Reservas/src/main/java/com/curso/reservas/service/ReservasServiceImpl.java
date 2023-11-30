@@ -1,5 +1,6 @@
 package com.curso.reservas.service;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,7 @@ public class ReservasServiceImpl implements ReservasService {
 	 * @return Reserva
 	 */
 	@Override
-	public Reserva addReserva(NuevaReservaDTO nuevaReserva) {
+	public Boolean addReserva(NuevaReservaDTO nuevaReserva) {
 	    try {
 	        // Verificar si hay plazas en el vuelo
 	        String urlHasPlazas = urlVuelos + "/hasplazas/" + nuevaReserva.getIdVuelo() + "/" + nuevaReserva.getPersonas();
@@ -70,7 +71,8 @@ public class ReservasServiceImpl implements ReservasService {
 	        // Actualizar plazas del vuelo
 	        String urlUdpPlazas = urlVuelos + "/reserve/" + nuevaReserva.getIdVuelo() + "/" + nuevaReserva.getPersonas();
 	        template.put(urlUdpPlazas, null);
-	        return dao.save(reserva);
+	        dao.save(reserva);
+	        return true;
 
 	    } catch (DataIntegrityViolationException e) {
 	        e.printStackTrace();
@@ -106,7 +108,7 @@ public class ReservasServiceImpl implements ReservasService {
 		if(idHotel != -1) {
 			return dao.findByIdHotel(idHotel);
 		}
-		return null;
+		return Collections.<Reserva>emptyList();
 	}
 
 }
