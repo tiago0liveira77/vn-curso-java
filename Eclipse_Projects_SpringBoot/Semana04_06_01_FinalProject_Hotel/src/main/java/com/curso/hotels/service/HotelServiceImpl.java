@@ -11,8 +11,17 @@ import org.springframework.stereotype.Service;
 import com.curso.hotels.dao.HotelsDAO;
 import com.curso.hotels.model.Hotel;
 
+/**
+ * Clase servicio, dónde implementamos los métodos de la interfaz
+ *
+ * @see com.curso.hotels.service
+ * @see com.curso.hotels.dao
+ */
 @Service
 public class HotelServiceImpl implements HotelsService {
+	/**
+     * Inyectamos el dao que extiende de JpaRepository para poder acceder a los metodos 
+     */
 	@Autowired
 	HotelsDAO dao;
 
