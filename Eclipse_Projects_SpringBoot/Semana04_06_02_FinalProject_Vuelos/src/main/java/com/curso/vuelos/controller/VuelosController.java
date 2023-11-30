@@ -3,8 +3,6 @@ package com.curso.vuelos.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,32 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.curso.vuelos.model.Vuelo;
 import com.curso.vuelos.service.VuelosService;
 
-/**
- * Controlador @RestController para realizar peticiones a traves de los metodos
- * Http, devolvemos y consumimos recurso en formato JSON
- *
- * @author Tiago Oliveira
- * @see com.curso.vuelos.service
- * @see com.curso.vuelos.dao
- * 
- */
 @RestController
 @RequestMapping("/vuelos")
 public class VuelosController {
-	/**
-     * Inyectamos la interfaz de nuestro servicio, la conexion entre capas siempre
-     * debera realizarse mediante una interfaz
-     */
 	@Autowired
 	VuelosService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Vuelo>> getVuelos(){
-		List<Vuelo> vuelos = service.getVuelos();
-		if(vuelos.isEmpty()) {
-			 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
-		}
-		return ResponseEntity.ok(vuelos);
+	public List<Vuelo> getVuelos(){
+		return service.getVuelos();
 	}
 	
 	@GetMapping(value="hasplazas/{idvuelo}/{plaza}")

@@ -14,33 +14,17 @@ import com.curso.reservas.exceptions.ReservaException;
 import com.curso.reservas.exceptions.VueloNoDisponibleException;
 import com.curso.reservas.model.Reserva;
 
-/**
- * Clase servicio, dónde implementamos los métodos de la interfaz
- *
- * @see com.curso.reservas.service.ReservasService
- * @see com.curso.reservas.dao.ReservasDAO
- */
 @Service
 public class ReservasServiceImpl implements ReservasService {
-	/**
-     * Inyectamos el dao que extiende de JpaRepository para poder acceder a los metodos 
-     */
 	@Autowired
 	ReservasDAO dao;
 
-	/**
-	 * Creamos una RestTemplate para acceder a los otros microservicios.
-	 */
 	@Autowired
 	RestTemplate template;
 
 	private String urlHotels = "http://localhost:8080/hotels";
 	private String urlVuelos = "http://localhost:9000/vuelos";
 
-	/**
-	 * @param NuevaReservaDTO nuevaReserva
-	 * @return Reserva
-	 */
 	@Override
 	public Reserva addReserva(NuevaReservaDTO nuevaReserva) {
 	    try {
@@ -88,17 +72,11 @@ public class ReservasServiceImpl implements ReservasService {
 	}
 
 
-	/**
-	 * @return List<Reserva>
-	 */
 	@Override
 	public List<Reserva> getReservas() {
 		return dao.findAll();
 	}
 
-	/**
-	 * @return List<Reserva>
-	 */
 	@Override
 	public List<Reserva> getReservasByHotelName(String nombreHotel) {
 		String urlGetHotelID = urlHotels + "/id/" + nombreHotel;

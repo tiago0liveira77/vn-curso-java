@@ -10,17 +10,8 @@ import org.springframework.stereotype.Service;
 import com.curso.vuelos.dao.VuelosDAO;
 import com.curso.vuelos.model.Vuelo;
 
-/**
- * Clase servicio, dónde implementamos los métodos de la interfaz
- *
- * @see com.curso.vuelos.service
- * @see com.curso.vuelos.dao
- */
 @Service
 public class VuelosServiceImpl implements VuelosService {
-	/**
-     * Inyectamos el dao que extiende de JpaRepository para poder acceder a los metodos 
-     */
 	@Autowired
 	VuelosDAO dao;
 
