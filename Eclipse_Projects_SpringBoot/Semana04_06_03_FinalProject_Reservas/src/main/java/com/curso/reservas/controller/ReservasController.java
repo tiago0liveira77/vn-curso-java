@@ -16,21 +16,36 @@ import com.curso.reservas.dto.NuevaReservaDTO;
 import com.curso.reservas.model.Reserva;
 import com.curso.reservas.service.ReservasService;
 
+/**
+ * Controlador @RestController para realizar peticiones a traves de los metodos
+ * Http, devolvemos y consumimos recurso en formato JSON
+ * 
+ * @author Tiago Oliveira
+ * @see com.curso.reservas.service.ReservasService
+ * @see com.curso.reservas.dao.ReservasDAO
+ * 
+ * 
+ */
 @RestController
 @RequestMapping("/reservas")
 public class ReservasController {
+	/**
+     * Inyectamos la interfaz de nuestro servicio, la conexion entre capas siempre
+     * debera realizarse mediante una interfaz
+     */
 	@Autowired
 	ReservasService service;
 	
 	/**
+	 * 
 	 * Add Nueva reserva verificando
 	 * Si Hay plazas suficientes
 	 * SI el hotel esta disponible
 	 * 
 	 * GET /reservas
 	 * 
-	 * @param nuevaReserva
-	 * @return ResponseEntity<?> con el status y la reserva en caso success
+	 * @param NuevaReservaDTO nuevaReserva
+	 * @return ResponseEntity<?>
 	 */
 	@PostMapping
 	public ResponseEntity<?> addReserva(@RequestBody NuevaReservaDTO nuevaReserva) {
@@ -44,22 +59,30 @@ public class ReservasController {
 	}
 	
 	/**
-	 * Retorna una lista de todas las reservas
-	 * @return 
+	 * Obtener Reservas
+	 * @return ResponseEntity<List<Reserva>>
 	 */
 	@GetMapping
-	public List<Reserva> getReservas(){
-		return service.getReservas();
+	public ResponseEntity<List<Reserva>> getReservas(){
+		List<Reserva> reservas = service.getReservas();
+		if(reservas.isEmpty()) {
+			 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+		}
+		return ResponseEntity.ok(reservas);
 	}
 	
 	/**
-	 * Retorna una lista de reservas de con un determinado hotel
+	 * Obtener Reservas de un HOTEL
 	 * @param nombreHotel
-	 * @return
+	 * @return ResponseEntity<List<Reserva>>
 	 */
 	@GetMapping(value="{hotel}")
-	public List<Reserva> getReservasByHotelName(@PathVariable("hotel")String nombreHotel){
-		return service.getReservasByHotelName(nombreHotel);
+	public ResponseEntity<List<Reserva>> getReservasByHotelName(@PathVariable("hotel")String nombreHotel){
+		List<Reserva> reservas = service.getReservasByHotelName(nombreHotel);
+		if(reservas.isEmpty()) {
+			 return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+		}
+		return ResponseEntity.ok(reservas);
 	}
 	
 }
