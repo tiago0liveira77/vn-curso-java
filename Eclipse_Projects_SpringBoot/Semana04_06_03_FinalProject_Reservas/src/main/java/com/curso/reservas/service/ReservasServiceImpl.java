@@ -99,6 +99,7 @@ public class ReservasServiceImpl implements ReservasService {
 	}
 
 	/**
+	 * @param nombreHotel
 	 * @return List<Reserva>
 	 */
 	@Override

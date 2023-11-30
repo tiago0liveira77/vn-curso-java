@@ -35,6 +35,10 @@ public class HotelsController {
 	@Autowired
 	HotelsService service;
 	
+	/**
+	 * 
+	 * @return ResponseEntity<List<Hotel>>
+	 */
 	@GetMapping
 	public ResponseEntity<List<Hotel>> getHotels(){
 		List<Hotel> hotels = service.getHotels();
@@ -44,11 +48,20 @@ public class HotelsController {
 		return ResponseEntity.ok(hotels);
 	}
 	
+	/**
+	 * 
+	 * @param hotel
+	 * @return ResponseEntity<Boolean>
+	 */
 	@PostMapping
 	public ResponseEntity<Boolean> addHotel(@RequestBody Hotel hotel){
 		return ResponseEntity.ok(service.addHotel(hotel));	
 	}
 	
+	/**
+	 * 
+	 * @return ResponseEntity<List<Hotel>>
+	 */
 	@GetMapping("/disponibles")
 	public ResponseEntity<List<Hotel>> getHotelsAvailable(){
 		List<Hotel> hotels = service.getHotelsAvailable(true);
@@ -58,16 +71,31 @@ public class HotelsController {
 		return ResponseEntity.ok(hotels);
 	}
 	
+	/**
+	 * 
+	 * @param hotel
+	 * @return Optional<Hotel>
+	 */
 	@GetMapping("/{hotel}")
 	public Optional<Hotel> getHotelsByName(@PathVariable("hotel") String hotel){
 		return service.getHotelsByName(hotel);
 	}
 	
+	/**
+	 * 
+	 * @param hotel
+	 * @return ResponseEntity<Integer>
+	 */
 	@GetMapping("/id/{hotel}")
 	public ResponseEntity<Integer> getHotelsIDByName(@PathVariable("hotel") String hotel){
 		return ResponseEntity.ok(service.getHotelsIDByName(hotel));
 	}
 	
+	/**
+	 * 
+	 * @param idHotel
+	 * @return ResponseEntity<Boolean>
+	 */
 	@GetMapping("/disponibles/{idhotel}")
 	public ResponseEntity<Boolean> isHotelAvailable(@PathVariable("idhotel") int idHotel){
 		return ResponseEntity.ok(service.isHotelAvailable(idHotel));

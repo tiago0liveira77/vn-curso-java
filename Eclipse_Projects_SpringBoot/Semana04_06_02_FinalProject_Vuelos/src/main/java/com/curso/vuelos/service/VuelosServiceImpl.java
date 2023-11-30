@@ -24,6 +24,10 @@ public class VuelosServiceImpl implements VuelosService {
 	@Autowired
 	VuelosDAO dao;
 
+	/**
+	 * @param vuelo
+	 * @retun Boolean
+	 */
 	@Override
 	public Boolean addVuelo(Vuelo vuelo) {
 		try {
@@ -39,6 +43,9 @@ public class VuelosServiceImpl implements VuelosService {
 		}
 	}
 
+	/**
+	 * @return List<Vuelo>
+	 */
 	@Override
 	public List<Vuelo> getVuelos() {
 		try {
@@ -49,6 +56,10 @@ public class VuelosServiceImpl implements VuelosService {
 		}
 	}
 
+	/**
+	 * @param plaza
+	 * @return List<Vuelo>
+	 */
 	@Override
 	public List<Vuelo> getVuelosDisponibles(int plaza) {
 		try {
@@ -59,6 +70,11 @@ public class VuelosServiceImpl implements VuelosService {
 		}
 	}
 
+	/**
+	 * @param idVuelo
+	 * @param plazasReservadas
+	 * @return Boolean
+	 */
 	@Override
 	public Boolean updVuelo(int idVuelo, int plazasReservadas) {
 		try {
@@ -79,6 +95,11 @@ public class VuelosServiceImpl implements VuelosService {
 
 	}
 
+	/**
+	 * @param idVuelo
+	 * @param plazasReservadas
+	 * @return Boolean
+	 */
 	@Override
 	public Boolean hasPlazas(int idVuelo, int plazasReservadas) {
 		try {

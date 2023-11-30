@@ -44,7 +44,7 @@ public class ReservasController {
 	 * GET /reservas
 	 * 
 	 * @param NuevaReservaDTO nuevaReserva
-	 * @return ResponseEntity<?>
+	 * @return ResponseEntity<Boolean>
 	 */
 	@PostMapping
 	public ResponseEntity<Boolean> addReserva(@RequestBody NuevaReservaDTO nuevaReserva) {
